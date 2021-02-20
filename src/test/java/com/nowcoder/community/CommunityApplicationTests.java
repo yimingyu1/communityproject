@@ -4,11 +4,13 @@ import com.nowcoder.community.dao.DiscussPostMapper;
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.User;
+import com.nowcoder.community.util.MailClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
@@ -25,6 +27,12 @@ class CommunityApplicationTests {
 
     @Resource
     private DiscussPostMapper discussPostMapper;
+
+    @Resource
+    private MailClient mailClient;
+
+    @Resource
+    private TemplateEngine templateEngine;
 
     @Test
     void contextLoads() {
@@ -67,6 +75,18 @@ class CommunityApplicationTests {
         }
 
     }
+
+    @Test
+    public void test3(){
+        Context context = new Context();
+        context.setVariable("username", "sunnday");
+        String process = templateEngine.process("/mail/demo", context);
+        mailClient.sendMail("371044760@qq.com", "你好  我是javaMailSender", process);
+        System.out.println(process);
+    }
+
+
+
 
 
 }

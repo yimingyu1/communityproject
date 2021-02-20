@@ -15,7 +15,24 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
+  mail:
+    host: smtp.163.com
+    username: mingyu_yi@163.com
+    password: WBMDWZLCJHDWBDXJ
+    protocol: smtp
+    default-encoding: utf-8
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+
 
