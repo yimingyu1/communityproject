@@ -18,7 +18,7 @@ spring:
   mail:
     host: smtp.163.com
     username: mingyu_yi@163.com
-    password: *
+    password: WBMDWZLCJHDWBDXJ
     protocol: smtp
     default-encoding: utf-8
     test-connection: true
