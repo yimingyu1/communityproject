@@ -1,0 +1,21 @@
+# \u6DFB\u52A0\u9879\u76EE\u7684\u8BBF\u95EE\u8DEF\u5F84
+server:
+  servlet:
+    context-path: /community
+
+# \u5173\u95EDthymeleaf\u6A21\u677F\u5F15\u64CE\u7684\u7F13\u5B58\u529F\u80FD
+spring:
+  thymeleaf:
+    cache: false
+    #\u914D\u7F6E\u6570\u636E\u5E93\u8FDE\u63A5\u6C60
+  datasource:
+    url: jdbc:mysql://localhost:3306/community?useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
